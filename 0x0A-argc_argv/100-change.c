@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * main - main function
- * @argc: argument count
- * @argv: argument vector
- * return: 0
+ * main - Main function
+ * @argc: Argument count
+ * @argv: Argument vector
+ * Return: 0 on success, 1 on error
  */
 
 int main(int argc, char *argv[])
@@ -18,26 +18,36 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-
 	cents = atoi(argv[1]);
-
 	if (cents < 0)
+	{
 		printf("%d\n", 0);
+		return (0);
+	}
+
 	while (cents > 0)
 	{
-		if (cents >= 25)
-			cents = cents - 25;
-		else if (cents >= 10)
-			cents = cents - 10;
-		else if (cents >= 5)
-			cents = cents - 5;
-		else if (cents >= 2)
-			cents = cents - 2;
-		else if (cents >= 1)
-			cents = cents - 1;
+	if (cents >= 25)
+	{
+		cents -= 25;
 		coins++;
+	}
+	else if (cents >= 10)
+	{
+		cents -= 10;
+		coins++;
+	}
+	else if (cents >= 5)
+	{
+		cents -= 5;
+		coins++;
+	}
+	else if (cents >= 1)
+	{
+		cents -= 1;
+		coins++;
+	}
 	}
 	printf("%d\n", coins);
 	return (0);
 }
-
